@@ -1,30 +1,34 @@
 package es.studium.TestBanco;
 
 public class TestBanco {
+	private static final String TXTLCD = "La cuenta de ";
+	private static final String TXTt = " tiene ";
+	private static final String DIVISAEU = " euros.";
+	private static final double €PORDEFECTO = 100;
 	public static void main(String[] args) {
 		/* Antonio y Beatriz se hacen cliente del banco */
 		Cliente antonio = new Cliente("123456789Z", "Antonio Alonso", "Av. Pueblo Saharaui, s/n");
 		Cliente beatriz = new Cliente("987654321A", "Beatriz Benítez", "Calle Sol, 4");
  
 		/* Por defecto, todas las cuentas nuevas tienen 100€ */
-		Cuenta cuentaAntonio = new Cuenta(48151, 100, antonio);
-		Cuenta cuentaBeatriz = new Cuenta(62342, 100, beatriz);
+		Cuenta cuentaAntonio = new Cuenta(48151, €PORDEFECTO, antonio);
+		Cuenta cuentaBeatriz = new Cuenta(62342, €PORDEFECTO, beatriz);
  
 		/* Antonio y Beatriz consultan el saldo */
-		System.out.println("La cuenta de " + cuentaAntonio.getCliente().getNombre() + " tiene "
-				+ cuentaAntonio.getSaldo() + " euros.");
-		System.out.println("La cuenta de " + cuentaBeatriz.getCliente().getNombre() + " tiene "
-				+ cuentaBeatriz.getSaldo() + " euros.");
+		System.out.println(TXTLCD + cuentaAntonio.getCliente().getNombre() + TXTt
+				+ cuentaAntonio.getSaldo() + DIVISAEU);
+		System.out.println(TXTLCD + cuentaBeatriz.getCliente().getNombre() + TXTt
+				+ cuentaBeatriz.getSaldo() + DIVISAEU);
  
 		/* Beatriz transfiere 50€ a Antonio */
 		cuentaBeatriz.setSaldo(cuentaBeatriz.getSaldo() - 50);
 		cuentaAntonio.setSaldo(cuentaAntonio.getSaldo() + 50);
  
 		/* Antonio y Beatriz vuelven a consultar para comprobar que todo ha ido bien */
-		System.out.println("La cuenta de " + cuentaAntonio.getCliente().getNombre() + " tiene "
-				+ cuentaAntonio.getSaldo() + " euros.");
-		System.out.println("La cuenta de " + cuentaBeatriz.getCliente().getNombre() + " tiene "
-				+ cuentaBeatriz.getSaldo() + " euros.");
+		System.out.println(TXTLCD + cuentaAntonio.getCliente().getNombre() + TXTt
+				+ cuentaAntonio.getSaldo() + DIVISAEU);
+		System.out.println(TXTLCD + cuentaBeatriz.getCliente().getNombre() + TXTt
+				+ cuentaBeatriz.getSaldo() + DIVISAEU);
  
 		/* Antonio gana 100€ en una rifa y hace un ingreso en su cuenta */
 		cuentaAntonio.setSaldo(cuentaAntonio.getSaldo() + 100);
