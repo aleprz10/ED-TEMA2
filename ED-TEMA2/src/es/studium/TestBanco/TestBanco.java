@@ -5,7 +5,13 @@ public class TestBanco {
 	private static final String TXTt = " tiene ";
 	private static final String DIVISAEU = " euros.";
 	private static final double €PORDEFECTO = 100;
+	/**
+	 * @param args
+	 * 
+	 * Este codigo ha sido refactorizado para que sea más eficiente
+	 */
 	public static void main(String[] args) {
+		
 		/* Antonio y Beatriz se hacen cliente del banco */
 		Cliente antonio = new Cliente("123456789Z", "Antonio Alonso", "Av. Pueblo Saharaui, s/n");
 		Cliente beatriz = new Cliente("987654321A", "Beatriz Benítez", "Calle Sol, 4");
